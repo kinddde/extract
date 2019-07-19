@@ -1,0 +1,21 @@
+{
+  "name": "novels_extract",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get your application up and running.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://cuikangjie@bitbucket.org/cuikangjie/novels_extract.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/cuikangjie/novels_extract#readme",
+  "dependencies": {
+    "node-fetch": "1.7.3",
+    "xmldom": "^0.1.27",
+    "xpath": "^0.0.27"
+  }
+}
