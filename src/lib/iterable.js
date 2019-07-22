@@ -22,8 +22,6 @@ const _ = require("lodash");
 module.exports = (source, rule) => {
   const mapFuns = require("./funs");
 
-  console.log(mapFuns);
-
   return source.map(item => {
     let $obj = {};
     _.forIn(rule, (value, key) => {
@@ -34,6 +32,6 @@ module.exports = (source, rule) => {
       }
     });
 
-    return item;
+    return $obj;
   });
 };
