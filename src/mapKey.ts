@@ -1,9 +1,9 @@
-const _ = require("lodash");
+import { forIn, each, trim, isArray, isObject } from "lodash";
 
-function mapKey(obj, map) {
-  let $obj = {};
+function mapKey(obj: object, map: Map<string, string>) {
+  let $obj: any = {};
 
-  _.forIn(obj, (value, key) => {
+  forIn(obj, (value: any, key: string) => {
     if (map.get(key)) {
       $obj[map.get(key)] = value;
     }
@@ -12,14 +12,14 @@ function mapKey(obj, map) {
   return $obj;
 }
 
-function resolveMapKeys(mapKeys) {
-  let map = new Map();
+function resolveMapKeys(mapKeys: string) {
+  let map = new Map<string, string>();
 
   let strs = mapKeys.split(",");
 
-  _.each(strs, str => {
+  each(strs, (str: string) => {
     let $str = str.split("=");
-    map.set(_.trim($str[0]), _.trim($str[1]));
+    map.set(trim($str[0]), trim($str[1]));
   });
 
   return map;
@@ -31,20 +31,20 @@ function resolveMapKeys(mapKeys) {
  * @param  {[string]} mapkeys [Id=id,Name=title,Author=author]
  * @return {[type]}         [description]
  */
-function mapKeys(source, mapkeys) {
+function mapKeys(source: any, mapkeys: string): any {
   if (!mapkeys) {
     throw new Error("mapkey keys is null");
   }
   let map = resolveMapKeys(mapkeys);
 
-  if (_.isArray(source)) {
+  if (isArray(source)) {
     // 数组
-    return source.map(obj => {
+    return source.map((obj: object) => {
       return mapKey(obj, map);
     });
   }
 
-  if (_.isObject(source)) {
+  if (isObject(source)) {
     // 对象
     return mapKey(source, map);
   }
@@ -75,4 +75,4 @@ function mapKeys(source, mapkeys) {
 //
 // console.log(obj);
 
-module.exports = mapKeys;
+export default mapKeys;
