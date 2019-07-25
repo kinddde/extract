@@ -3,13 +3,18 @@
   "exclude": ["src/test/*"],
 
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "*": ["typing/*"]
+    },
     "module": "commonjs",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
     "outDir": "lib/",
     "sourceMap": true,
-
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
     "typeRoots": ["./node_modules/@types"],
     "target": "es6"
   }

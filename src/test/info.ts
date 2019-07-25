@@ -16,7 +16,7 @@ const rule: Array<Rule> = [
           fun: "xpath",
           arg: `string(//div[contains(@class, "book-info")]/div/em/text())`
         },
-        { fun: "replace", arg: { reg: "作者：" } }
+        { fun: "replace", arg: { reg: "作者" } }
       ]
     }
   }

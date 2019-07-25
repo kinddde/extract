@@ -910,13 +910,25 @@ img { max-width: 100%; }
 <nav class="tsd-navigation secondary">
 	<ul>
 		<li class=" tsd-kind-class">
+			<a href="classes/request.html" class="tsd-kind-icon">Request</a>
+		</li>
+		<li class=" tsd-kind-class">
 			<a href="classes/timer.html" class="tsd-kind-icon">Timer</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="interfaces/requestoption.html" class="tsd-kind-icon">Request<wbr>Option</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="interfaces/requestparam.html" class="tsd-kind-icon">Request<wbr>Param</a>
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="interfaces/rule.html" class="tsd-kind-icon">Rule</a>
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="interfaces/domparserrule.html" class="tsd-kind-icon">dom<wbr>Parser<wbr>Rule</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="interfaces/filteremptystringrule.html" class="tsd-kind-icon">filter<wbr>Empty<wbr>String<wbr>Rule</a>
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="interfaces/iterablefunrule.html" class="tsd-kind-icon">iterable<wbr>Fun<wbr>Rule</a>
@@ -935,6 +947,9 @@ img { max-width: 100%; }
 		</li>
 		<li class=" tsd-kind-interface">
 			<a href="interfaces/tostringrule.html" class="tsd-kind-icon">to<wbr>String<wbr>Rule</a>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="interfaces/trimrule.html" class="tsd-kind-icon">trim<wbr>Rule</a>
 		</li>
 		<li class=" tsd-kind-type-alias">
 			<a href="globals.html#funname" class="tsd-kind-icon">Fun<wbr>Name</a>
@@ -958,12 +973,6 @@ img { max-width: 100%; }
 		<div class="tsd-panel tsd-typography">
 			<h1 id="compile-rule">compile rule</h1>
 			<p>网页解析、json 解析</p>
-			<h3 id="what-is-this-repository-for-">What is this repository for?</h3>
-			<ul>
-				<li>Quick summary</li>
-				<li>Version</li>
-				<li><a href="https://bitbucket.org/tutorials/markdowndemo">Learn Markdown</a></li>
-			</ul>
 		</div>
 		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
 		<section class="tsd-panel-group tsd-index-group">
@@ -973,20 +982,25 @@ img { max-width: 100%; }
 					<section class="tsd-index-section ">
 						<h3>Classes</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-class"><a href="classes/request.html" class="tsd-kind-icon">Request</a></li>
 							<li class="tsd-kind-class"><a href="classes/timer.html" class="tsd-kind-icon">Timer</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
 						<h3>Interfaces</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-interface"><a href="interfaces/requestoption.html" class="tsd-kind-icon">Request<wbr>Option</a></li>
+							<li class="tsd-kind-interface"><a href="interfaces/requestparam.html" class="tsd-kind-icon">Request<wbr>Param</a></li>
 							<li class="tsd-kind-interface"><a href="interfaces/rule.html" class="tsd-kind-icon">Rule</a></li>
 							<li class="tsd-kind-interface"><a href="interfaces/domparserrule.html" class="tsd-kind-icon">dom<wbr>Parser<wbr>Rule</a></li>
+							<li class="tsd-kind-interface"><a href="interfaces/filteremptystringrule.html" class="tsd-kind-icon">filter<wbr>Empty<wbr>String<wbr>Rule</a></li>
 							<li class="tsd-kind-interface"><a href="interfaces/iterablefunrule.html" class="tsd-kind-icon">iterable<wbr>Fun<wbr>Rule</a></li>
 							<li class="tsd-kind-interface"><a href="interfaces/iterablerule.html" class="tsd-kind-icon">iterable<wbr>Rule</a></li>
 							<li class="tsd-kind-interface"><a href="interfaces/mapkeyrule.html" class="tsd-kind-icon">map<wbr>Key<wbr>Rule</a></li>
 							<li class="tsd-kind-interface"><a href="interfaces/mapobjectrule.html" class="tsd-kind-icon">map<wbr>Object<wbr>Rule</a></li>
 							<li class="tsd-kind-interface"><a href="interfaces/replacerule.html" class="tsd-kind-icon">replace<wbr>Rule</a></li>
 							<li class="tsd-kind-interface"><a href="interfaces/tostringrule.html" class="tsd-kind-icon">to<wbr>String<wbr>Rule</a></li>
+							<li class="tsd-kind-interface"><a href="interfaces/trimrule.html" class="tsd-kind-icon">trim<wbr>Rule</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -1007,10 +1021,10 @@ img { max-width: 100%; }
 			<section class="tsd-panel tsd-member tsd-kind-type-alias">
 				<a name="funname" class="tsd-anchor"></a>
 				<h3>Fun<wbr>Name</h3>
-				<div class="tsd-signature tsd-kind-icon">Fun<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"boolean"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"jsonPath"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mapKey"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"iterable"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"toString"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"xpath"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"domParse"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"iterableFun"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"match"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"replace"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mapObject"</span></div>
+				<div class="tsd-signature tsd-kind-icon">Fun<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"boolean"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"jsonPath"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mapKey"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"iterable"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"toString"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"xpath"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"domParse"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"iterableFun"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"match"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"replace"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mapObject"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"trim"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"filterEmptyString"</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in compile/funs.ts:33</li>
+						<li>Defined in compile/funs.ts:38</li>
 					</ul>
 				</aside>
 			</section>

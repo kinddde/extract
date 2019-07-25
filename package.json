@@ -21,6 +21,9 @@
     "@types/node": "^12.6.8",
     "@types/node-fetch": "^2.5.0",
     "@types/xmldom": "^0.1.29",
+    "fast-gbk": "^0.0.1",
+    "form-data": "^2.5.0",
+    "json5": "^2.1.0",
     "jsonpath": "^1.0.2",
     "lodash": "^4.17.15",
     "node-fetch": "1.7.3",
@@ -29,6 +32,9 @@
     "xpath": "^0.0.27"
   },
   "devDependencies": {
+    "@types/json5": "^0.0.30",
+    "@types/qs": "^6.5.3",
+    "gbk.js": "^0.3.0",
     "ts-node": "^8.3.0",
     "ts-node-dev": "^1.0.0-pre.40",
     "typedoc": "^0.14.2",

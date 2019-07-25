@@ -1,6 +1,8 @@
 import booleanFun, { booleanRule } from "./boolean";
 import domParseFun, { domParserRule } from "./domParser";
-
+import filterEmptyStringFun, {
+  filterEmptyStringRule
+} from "./filterEmptyString";
 import iterableFun, { iterableRule } from "./iterable";
 import iterableFunFun, { iterableFunRule } from "./iterableFun";
 import jsonPathFun, { jsonPathRule } from "./jsonPath";
@@ -9,6 +11,7 @@ import mapObjectFun, { mapObjectRule } from "./mapObject";
 import matchFun, { matchFunRule } from "./match";
 import replaceFun, { replaceRule } from "./replace";
 import toStringFun, { toStringRule } from "./toString";
+import trimFun, { trimRule } from "./trim";
 import xpathFun, { xpathRule } from "./xpath";
 
 import Timer from "../util/timer";
@@ -27,6 +30,8 @@ export interface Rule {
     | matchFunRule
     | iterableRule
     | mapKeyRule
+    | trimRule
+    | filterEmptyStringRule
     | any;
 }
 
@@ -41,7 +46,9 @@ export type FunName =
   | "iterableFun"
   | "match"
   | "replace"
-  | "mapObject";
+  | "mapObject"
+  | "trim"
+  | "filterEmptyString";
 
 function resolveFun(data: any, rule: Rule) {
   const { fun, arg } = rule;
@@ -72,6 +79,10 @@ function resolveFun(data: any, rule: Rule) {
       return replaceFun(data, arg);
     case "mapObject":
       return mapObjectFun(data, arg);
+    case "trim":
+      return trimFun(data);
+    case "filterEmptyString":
+      return filterEmptyStringFun(data);
   }
 }
 
