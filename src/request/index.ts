@@ -3,6 +3,7 @@ import request from "./request";
 import qs from "qs";
 import formData from "./form";
 import JSON5 from "json5";
+import gbk from "./gbk";
 
 import { RequestOption, RequestParam } from "./interface";
 
@@ -49,6 +50,10 @@ export default class Request {
     this.$data = null;
 
     this.$encode = encode;
+
+    if (this.$encode === "gbk") {
+      this.$param = gbk(this.$param);
+    }
 
     if (this.$method === "GET") {
       return this.get();

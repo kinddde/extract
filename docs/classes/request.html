@@ -916,10 +916,10 @@ img { max-width: 100%; }
 					<a href="request.html#constructor" class="tsd-kind-icon">constructor</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a href="request.html#_contenttype" class="tsd-kind-icon">$content<wbr>Type</a>
+					<a href="request.html#_data" class="tsd-kind-icon">$data</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a href="request.html#_data" class="tsd-kind-icon">$data</a>
+					<a href="request.html#_encode" class="tsd-kind-icon">$encode</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a href="request.html#_logger" class="tsd-kind-icon">$logger</a>
@@ -931,10 +931,16 @@ img { max-width: 100%; }
 					<a href="request.html#_param" class="tsd-kind-icon">$param</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a href="request.html#_paramtype" class="tsd-kind-icon">$param<wbr>Type</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a href="request.html#_response" class="tsd-kind-icon">$response</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a href="request.html#_url" class="tsd-kind-icon">$url</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a href="request.html#reuqestparam" class="tsd-kind-icon">reuqest<wbr>Param</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 					<a href="request.html#get" class="tsd-kind-icon">get</a>
@@ -1029,13 +1035,15 @@ img { max-width: 100%; }
 					<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="request.html#_contenttype" class="tsd-kind-icon">$content<wbr>Type</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="request.html#_data" class="tsd-kind-icon">$data</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="request.html#_encode" class="tsd-kind-icon">$encode</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="request.html#_logger" class="tsd-kind-icon">$logger</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="request.html#_method" class="tsd-kind-icon">$method</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="request.html#_param" class="tsd-kind-icon">$param</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="request.html#_paramtype" class="tsd-kind-icon">$param<wbr>Type</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="request.html#_response" class="tsd-kind-icon">$response</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="request.html#_url" class="tsd-kind-icon">$url</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="request.html#reuqestparam" class="tsd-kind-icon">reuqest<wbr>Param</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -1062,7 +1070,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in request/index.ts:19</li>
+								<li>Defined in request/index.ts:23</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1079,22 +1087,22 @@ img { max-width: 100%; }
 		<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
 			<h2>Properties</h2>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-				<a name="_contenttype" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagPrivate">Private</span> $content<wbr>Type</h3>
-				<div class="tsd-signature tsd-kind-icon">$content<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-				<aside class="tsd-sources">
-					<ul>
-						<li>Defined in request/index.ts:16</li>
-					</ul>
-				</aside>
-			</section>
-			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 				<a name="_data" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagPrivate">Private</span> $data</h3>
 				<div class="tsd-signature tsd-kind-icon">$data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in request/index.ts:19</li>
+						<li>Defined in request/index.ts:20</li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<a name="_encode" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> $encode</h3>
+				<div class="tsd-signature tsd-kind-icon">$encode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in request/index.ts:21</li>
 					</ul>
 				</aside>
 			</section>
@@ -1104,7 +1112,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">$logger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in request/index.ts:9</li>
+						<li>Defined in request/index.ts:10</li>
 					</ul>
 				</aside>
 			</section>
@@ -1114,7 +1122,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">$method<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in request/index.ts:12</li>
+						<li>Defined in request/index.ts:13</li>
 					</ul>
 				</aside>
 			</section>
@@ -1124,7 +1132,17 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">$param<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in request/index.ts:18</li>
+						<li>Defined in request/index.ts:19</li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<a name="_paramtype" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> $param<wbr>Type</h3>
+				<div class="tsd-signature tsd-kind-icon">$param<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in request/index.ts:17</li>
 					</ul>
 				</aside>
 			</section>
@@ -1134,7 +1152,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">$response<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in request/index.ts:14</li>
+						<li>Defined in request/index.ts:15</li>
 					</ul>
 				</aside>
 			</section>
@@ -1144,7 +1162,17 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">$url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in request/index.ts:11</li>
+						<li>Defined in request/index.ts:12</li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<a name="reuqestparam" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> reuqest<wbr>Param</h3>
+				<div class="tsd-signature tsd-kind-icon">reuqest<wbr>Param<span class="tsd-signature-symbol">:</span> <a href="../interfaces/requestparam.html" class="tsd-signature-type">RequestParam</a></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in request/index.ts:23</li>
 					</ul>
 				</aside>
 			</section>
@@ -1161,7 +1189,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in request/index.ts:43</li>
+								<li>Defined in request/index.ts:60</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -1178,7 +1206,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in request/index.ts:51</li>
+								<li>Defined in request/index.ts:68</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -1195,7 +1223,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in request/index.ts:63</li>
+								<li>Defined in request/index.ts:80</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -1212,7 +1240,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in request/index.ts:25</li>
+								<li>Defined in request/index.ts:29</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>

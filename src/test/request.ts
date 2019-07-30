@@ -10,8 +10,9 @@ new Request()
     },
     param: {
       searchtype: "articlename",
-      searchkey: "%C8%FD%B4%E7%C8%CB%BC%E4"
-    }
+      searchkey: "三寸人间"
+    },
+    encode: "gbk"
   })
   .then((data: any) => {
     console.log(data);
