@@ -4,6 +4,7 @@ import qs from "qs";
 import formData from "./form";
 import JSON5 from "json5";
 import gbk from "./gbk";
+import map from "./map";
 
 import { RequestOption, RequestParam } from "./interface";
 
@@ -34,7 +35,8 @@ export default class Request {
       response = "json",
       param,
       encode = "qs",
-      paramType = "json"
+      paramType = "json",
+      paramRule
     } = prequestPram;
 
     this.reuqestParam = prequestPram;
@@ -53,6 +55,10 @@ export default class Request {
 
     if (this.$encode === "gbk") {
       this.$param = gbk(this.$param);
+    }
+
+    if (paramRule) {
+      this.$param = map(paramRule, this.$param);
     }
 
     if (this.$method === "GET") {

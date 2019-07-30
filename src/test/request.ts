@@ -41,7 +41,6 @@ const rule: Array<Rule> = [
 
 console.log(parse(stringify({ rule: rule })));
 
-
 let rules = parse(stringify({ rule: rule })).rule;
 new Request()
   .startRequest({
@@ -51,9 +50,12 @@ new Request()
     headers: {
       "Content-Type": "application/x-www-form-urlencoded"
     },
-    param: {
+    paramRule: {
       searchtype: "articlename",
-      searchkey: "三寸人间"
+      searchkey: "title"
+    },
+    param: {
+      title: "三寸人间"
     },
     encode: "gbk"
   })
