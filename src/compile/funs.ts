@@ -14,7 +14,7 @@ import toStringFun, { toStringRule } from "./toString";
 import trimFun, { trimRule } from "./trim";
 import xpathFun, { xpathRule } from "./xpath";
 
-import Timer from "../util/timer";
+import assignFun, { assignRule } from "./assign";
 
 export interface Rule {
   fun: FunName;
@@ -32,6 +32,7 @@ export interface Rule {
     | mapKeyRule
     | trimRule
     | filterEmptyStringRule
+    | assignRule
     | any;
 }
 
@@ -48,7 +49,8 @@ export type FunName =
   | "replace"
   | "mapObject"
   | "trim"
-  | "filterEmptyString";
+  | "filterEmptyString"
+  | "assign";
 
 function resolveFun(data: any, rule: Rule) {
   const { fun, arg } = rule;
@@ -83,20 +85,17 @@ function resolveFun(data: any, rule: Rule) {
       return trimFun(data);
     case "filterEmptyString":
       return filterEmptyStringFun(data);
+
+    case "assign":
+      return assignFun(arg);
   }
 }
-
-const timer = new Timer({ logger: true });
 
 export default (data: any, rules: any) => {
   let param = data;
 
   for (let rule of rules) {
-    timer.start();
-
     param = resolveFun(param, rule);
-
-    timer.end(rule.fun);
   }
 
   return param;

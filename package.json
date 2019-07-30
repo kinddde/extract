@@ -1,27 +1,21 @@
 {
-  "name": "Compile",
+  "name": "novels-compile",
   "version": "1.0.0",
   "description": "This README would normally document whatever steps are necessary to get your application up and running.",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "files": [
+    "lib/**"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf lib && tsc",
+    "prepublish": "yarn run build",
     "doc": "typedoc "
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://cuikangjie@bitbucket.org/cuikangjie/novels_extract.git"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/cuikangjie/novels_extract#readme",
+  "homepage": "",
   "dependencies": {
-    "@types/jsonpath": "^0.2.0",
-    "@types/lodash": "^4.14.136",
-    "@types/node": "^12.6.8",
-    "@types/node-fetch": "^2.5.0",
-    "@types/xmldom": "^0.1.29",
-    "fast-gbk": "^0.0.1",
     "form-data": "^2.5.0",
     "json5": "^2.1.0",
     "jsonpath": "^1.0.2",
@@ -29,12 +23,17 @@
     "node-fetch": "1.7.3",
     "qs": "^6.7.0",
     "xmldom": "^0.1.27",
+    "gbk.js": "^0.3.0",
     "xpath": "^0.0.27"
   },
   "devDependencies": {
+    "@types/jsonpath": "^0.2.0",
+    "@types/lodash": "^4.14.136",
+    "@types/node": "^12.6.8",
+    "@types/node-fetch": "^2.5.0",
+    "@types/xmldom": "^0.1.29",
     "@types/json5": "^0.0.30",
     "@types/qs": "^6.5.3",
-    "gbk.js": "^0.3.0",
     "ts-node": "^8.3.0",
     "ts-node-dev": "^1.0.0-pre.40",
     "typedoc": "^0.14.2",

@@ -1,1 +1,0 @@
-{"version":3,"file":"iterableFun.js","sourceRoot":"","sources":["../../src/compile/iterableFun.ts"],"names":[],"mappings":";;AAAA,2CAAoC;AAiBpC,kBAAe,CAAC,MAAkB,EAAE,IAAS,EAAc,EAAE;IAC3D,OAAO,MAAM,CAAC,GAAG,CAAC,CAAC,IAAS,EAAE,EAAE;QAC9B,OAAO,mBAAS,CAAC,IAAI,EAAE,IAAI,CAAC,CAAC;IAC/B,CAAC,CAAC,CAAC;AACL,CAAC,CAAC"}

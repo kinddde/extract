@@ -256,11 +256,6 @@ esutils@^2.0.2:
   resolved "https://registry.npm.taobao.org/esutils/download/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
   integrity sha1-Cr9PHKpbyx96nYrMbepPqqBLrJs=
 
-fast-gbk@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.npm.taobao.org/fast-gbk/download/fast-gbk-0.0.1.tgz#68eb9dcd06ede66fb89ed737e55167b0cb1374ea"
-  integrity sha1-aOudzQbt5m+4ntc35VFnsMsTdOo=
-
 fast-levenshtein@~2.0.4:
   version "2.0.6"
   resolved "https://registry.npm.taobao.org/fast-levenshtein/download/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
