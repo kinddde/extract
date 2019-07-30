@@ -1,18 +1,22 @@
 {
-  "name": "novels-compile",
+  "name": "@kin-common/novels-compile",
   "version": "1.0.0",
+  "private": false,
   "description": "This README would normally document whatever steps are necessary to get your application up and running.",
   "main": "lib/index.js",
   "files": [
     "lib/**"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf lib && tsc",
     "prepublish": "yarn run build",
     "doc": "typedoc "
   },
-  "author": "",
+  "author": "kin",
   "license": "ISC",
   "homepage": "",
   "dependencies": {
