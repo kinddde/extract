@@ -14,30 +14,36 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf lib && tsc",
     "prepublish": "yarn run build",
-    "doc": "typedoc "
+    "doc": "typedoc && git add ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run doc"
+    }
   },
   "author": "kin",
   "license": "ISC",
   "homepage": "",
   "dependencies": {
     "form-data": "^2.5.0",
+    "gbk.js": "^0.3.0",
     "json5": "^2.1.0",
     "jsonpath": "^1.0.2",
     "lodash": "^4.17.15",
     "node-fetch": "1.7.3",
     "qs": "^6.7.0",
     "xmldom": "^0.1.27",
-    "gbk.js": "^0.3.0",
     "xpath": "^0.0.27"
   },
   "devDependencies": {
+    "@types/json5": "^0.0.30",
     "@types/jsonpath": "^0.2.0",
     "@types/lodash": "^4.14.136",
     "@types/node": "^12.6.8",
     "@types/node-fetch": "^2.5.0",
-    "@types/xmldom": "^0.1.29",
-    "@types/json5": "^0.0.30",
     "@types/qs": "^6.5.3",
+    "@types/xmldom": "^0.1.29",
+    "husky": "^3.0.2",
     "ts-node": "^8.3.0",
     "ts-node-dev": "^1.0.0-pre.40",
     "typedoc": "^0.14.2",
