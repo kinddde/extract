@@ -26,6 +26,8 @@ export default class Request {
 
   private reuqestParam: RequestParam;
 
+  private $urlTemplate: boolean;
+
   constructor(option: RequestOption = { logger: false }) {
     this.$logger = option.logger;
   }
@@ -56,6 +58,8 @@ export default class Request {
 
     this.$encode = encode;
 
+    this.$urlTemplate = urlTemplate;
+
     if (this.$encode === "gbk") {
       this.$param = gbk(this.$param);
     }
@@ -76,9 +80,11 @@ export default class Request {
   }
 
   private get() {
-    let url = qs.stringify(this.$param);
+    if (!this.$urlTemplate) {
+      let url = qs.stringify(this.$param || {});
 
-    this.$url = this.$url + '?' + url;
+      this.$url = this.$url + "?" + url;
+    }
 
     return this.request();
   }
