@@ -78,7 +78,7 @@ export default class Request {
   private get() {
     let url = qs.stringify(this.$param);
 
-    this.$url = this.$url + url;
+    this.$url = this.$url + '?' + url;
 
     return this.request();
   }

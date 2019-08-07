@@ -39,25 +39,18 @@ const rule: Array<Rule> = [
   }
 ];
 
-new Request()
+new Request({ logger: true })
   .startRequest({
-    url: "https://www.aikantxt.la/modules/article/search.php/<%=searchkey%>",
+    url: "https://www.aikantxt.la/aikan<%=bookId%>/",
     urlTemplate: true,
-    method: "post",
-    response: "text",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
-    },
-    paramRule: {
-      searchtype: "articlename",
-      searchkey: "title"
-    },
-    param: {
-      title: "三寸人间"
-    },
-    encode: "gbk"
+    method: "GET",
+    paramType: "json",
+    param: { bookId: "28772" },
+    encode: "qs",
+    response: "text"
   })
   .then((data: any) => {
+    console.log(data)
     // let links = Compile(data, rules);
     //
     // console.log(links);
