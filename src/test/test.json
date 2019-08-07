@@ -1,39 +1,28 @@
-[
-  { "fun": "domParse" },
-  { "fun": "xpath", "arg": "//div[@id=\"content\"]//tr[@id=\"nr\"]" },
-  {
-    "fun": "iterableFun",
-    "arg": {
-      "$$$$": [{ "fun": "toString" }, { "fun": "domParse" }],
-      "title": [
-        {
-          "fun": "xpath",
-          "arg": "string(//td[contains(@class, \"odd\")][1]/a/text())"
-        }
-      ],
-      "author": [
-        {
-          "fun": "xpath",
-          "arg": "string(//td[contains(@class, \"odd\")][2]/text())"
-        }
-      ],
-      "bookId": [
-        {
-          "fun": "xpath",
-          "arg": "string(//td[contains(@class, \"odd\")][1]/a/@href)"
-        },
-        {
-          "fun": "match",
-          "arg": "\\/aikan([0-9]*)/$"
-        },
-        { "fun": "jsonPath", "arg": "$..[1]" }
-      ],
-      "sourceKey": [
-        {
-          "fun": "assign",
-          "arg": "aikantxt"
-        }
-      ]
+{
+  "url": "https://www.aikantxt.la/aikan28772/",
+  "method": "GET",
+  "paramType": "json",
+  "encode": "qs",
+  "response": "text",
+  "rules": [
+    {
+      "fun": "mapObject",
+      "arg": {
+        "$$$$": [{ "fun": "domParse" }],
+        "title": [
+          {
+            "fun": "xpath",
+            "arg": "string(//div[contains(@class, \"book-info\")]/div/h1/text())"
+          }
+        ],
+        "author": [
+          {
+            "fun": "xpath",
+            "arg": `string(//div[contains(@class, "book-info")]/div/em/text())`
+          },
+          { "fun": "replace", "arg": { "reg": "作者" } }
+        ]
+      }
     }
-  }
-]
+  ]
+}

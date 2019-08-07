@@ -4,6 +4,8 @@ export interface RequestOption {
 
 export interface RequestParam {
   url: string;
+
+  urlTemplate?: boolean;
   method: string;
   headers?: object;
   response?: "json" | "text";

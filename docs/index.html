@@ -967,6 +967,9 @@ img { max-width: 100%; }
 			<a href="globals.html#matchfunrule" class="tsd-kind-icon">match<wbr>Fun<wbr>Rule</a>
 		</li>
 		<li class=" tsd-kind-type-alias">
+			<a href="globals.html#splitfunrule" class="tsd-kind-icon">split<wbr>Fun<wbr>Rule</a>
+		</li>
+		<li class=" tsd-kind-type-alias">
 			<a href="globals.html#xpathrule" class="tsd-kind-icon">xpath<wbr>Rule</a>
 		</li>
 	</ul>
@@ -1015,6 +1018,7 @@ img { max-width: 100%; }
 							<li class="tsd-kind-type-alias"><a href="globals.html#booleanrule" class="tsd-kind-icon">boolean<wbr>Rule</a></li>
 							<li class="tsd-kind-type-alias"><a href="globals.html#jsonpathrule" class="tsd-kind-icon">json<wbr>Path<wbr>Rule</a></li>
 							<li class="tsd-kind-type-alias"><a href="globals.html#matchfunrule" class="tsd-kind-icon">match<wbr>Fun<wbr>Rule</a></li>
+							<li class="tsd-kind-type-alias"><a href="globals.html#splitfunrule" class="tsd-kind-icon">split<wbr>Fun<wbr>Rule</a></li>
 							<li class="tsd-kind-type-alias"><a href="globals.html#xpathrule" class="tsd-kind-icon">xpath<wbr>Rule</a></li>
 						</ul>
 					</section>
@@ -1026,10 +1030,10 @@ img { max-width: 100%; }
 			<section class="tsd-panel tsd-member tsd-kind-type-alias">
 				<a name="funname" class="tsd-anchor"></a>
 				<h3>Fun<wbr>Name</h3>
-				<div class="tsd-signature tsd-kind-icon">Fun<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"boolean"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"jsonPath"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mapKey"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"iterable"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"toString"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"xpath"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"domParse"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"iterableFun"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"match"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"replace"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mapObject"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"trim"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"filterEmptyString"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"assign"</span></div>
+				<div class="tsd-signature tsd-kind-icon">Fun<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"boolean"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"jsonPath"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mapKey"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"iterable"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"toString"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"xpath"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"domParse"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"iterableFun"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"match"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"replace"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mapObject"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"trim"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"filterEmptyString"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"assign"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"split"</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in compile/funs.ts:39</li>
+						<li>Defined in compile/funs.ts:42</li>
 					</ul>
 				</aside>
 			</section>
@@ -1081,6 +1085,22 @@ img { max-width: 100%; }
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
 						<p> matchFun 规则
+						@rule 正则表达式  &#39;&#39;.match</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-type-alias">
+				<a name="splitfunrule" class="tsd-anchor"></a>
+				<h3>split<wbr>Fun<wbr>Rule</h3>
+				<div class="tsd-signature tsd-kind-icon">split<wbr>Fun<wbr>Rule<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in compile/split.ts:5</li>
+					</ul>
+				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p> splitFun 规则
 						@rule 正则表达式  &#39;&#39;.match</p>
 					</div>
 				</div>

@@ -39,12 +39,10 @@ const rule: Array<Rule> = [
   }
 ];
 
-console.log(parse(stringify({ rule: rule })));
-
-let rules = parse(stringify({ rule: rule })).rule;
 new Request()
   .startRequest({
-    url: "https://www.aikantxt.la/modules/article/search.php",
+    url: "https://www.aikantxt.la/modules/article/search.php/<%=searchkey%>",
+    urlTemplate: true,
     method: "post",
     response: "text",
     headers: {
@@ -60,9 +58,9 @@ new Request()
     encode: "gbk"
   })
   .then((data: any) => {
-    let links = Compile(data, rules);
-
-    console.log(links);
+    // let links = Compile(data, rules);
+    //
+    // console.log(links);
   })
   .catch((err: any) => {
     console.log(err);

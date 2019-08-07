@@ -16,6 +16,8 @@ import xpathFun, { xpathRule } from "./xpath";
 
 import assignFun, { assignRule } from "./assign";
 
+import splitFun, { splitFunRule } from "./split";
+
 export interface Rule {
   fun: FunName;
   arg?:
@@ -33,6 +35,7 @@ export interface Rule {
     | trimRule
     | filterEmptyStringRule
     | assignRule
+    | splitFunRule
     | any;
 }
 
@@ -50,7 +53,8 @@ export type FunName =
   | "mapObject"
   | "trim"
   | "filterEmptyString"
-  | "assign";
+  | "assign"
+  | "split";
 
 function resolveFun(data: any, rule: Rule) {
   const { fun, arg } = rule;
@@ -88,6 +92,8 @@ function resolveFun(data: any, rule: Rule) {
 
     case "assign":
       return assignFun(arg);
+    case "split":
+      return splitFun(data, arg);
   }
 }
 

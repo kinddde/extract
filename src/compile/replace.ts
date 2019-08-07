@@ -9,7 +9,7 @@ export interface replaceRule {
 }
 
 function replaceFun(source: string, rule: replaceRule): string {
-  let reg = new RegExp(rule.reg);
+  let reg = new RegExp(rule.reg, "g");
   return source.replace(reg, rule.target || "");
 }
 

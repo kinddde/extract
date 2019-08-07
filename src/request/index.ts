@@ -6,6 +6,8 @@ import JSON5 from "json5";
 import gbk from "./gbk";
 import map from "./map";
 
+import { template } from "lodash";
+
 import { RequestOption, RequestParam } from "./interface";
 
 export default class Request {
@@ -36,7 +38,8 @@ export default class Request {
       param,
       encode = "qs",
       paramType = "json",
-      paramRule
+      paramRule,
+      urlTemplate = false
     } = prequestPram;
 
     this.reuqestParam = prequestPram;
@@ -59,6 +62,10 @@ export default class Request {
 
     if (paramRule) {
       this.$param = map(paramRule, this.$param);
+    }
+
+    if (urlTemplate) {
+      this.$url = template(this.$url)(this.$param);
     }
 
     if (this.$method === "GET") {
@@ -89,6 +96,7 @@ export default class Request {
   }
 
   private request() {
+    this.$logger && console.log(this.$url);
     return request(this.$url, {
       method: this.$method,
       body: this.$data,
