@@ -5,7 +5,7 @@ import { trim, isArray, isObject } from "lodash";
  * @key  目标对象key
  * @value  原对象key , 如果为空, value直接赋值
  */
-export interface mapKeyRule {
+export interface MapKeyRule {
   [propName: string]: any;
 }
 
@@ -19,7 +19,7 @@ function mapKey(obj: any, map: Map<string, string>): object {
   return $obj;
 }
 
-function resolveMapKeys(mapKeys: mapKeyRule) {
+function resolveMapKeys(mapKeys: MapKeyRule): any {
   let map = new Map<string, string>();
 
   for (let key in mapKeys) {
@@ -35,10 +35,11 @@ function resolveMapKeys(mapKeys: mapKeyRule) {
  * @param  {[string]} mapkeys [Id=id,Name=title,Author=author]
  * @return {[type]}         [description]
  */
-function mapKeys(
-  source: object | Array<any>,
-  mapObj: mapKeyRule = {}
-): object | Array<any> {
+
+export default (
+  source: object | any[],
+  mapObj: MapKeyRule = {}
+): object | any[] => {
   let map = resolveMapKeys(mapObj);
 
   if (isArray(source)) {
@@ -52,6 +53,6 @@ function mapKeys(
     // 对象
     return mapKey(source, map);
   }
-}
 
-export default mapKeys;
+  return source;
+};

@@ -1,13 +1,16 @@
-import mapObject from "./mapObject";
+import mapObject, { MapObjectRule } from "./mapObject";
 
-import { mapObjectRule } from "./mapObject";
+import { Rule } from "./funs";
 
 /**
  * mapFun 规则
  *
  * 数据源是数组， 遍历执行mapObject
  */
-export interface iterableFunRule extends mapObjectRule {}
+export interface IterableFunRule extends MapObjectRule {
+  $$$$: Rule[];
+  [propName: string]: Rule[];
+}
 
 /**
  *
@@ -15,7 +18,7 @@ export interface iterableFunRule extends mapObjectRule {}
  * @param  {[type]} source [description]
  * @return {[type]}        [description]
  */
-export default (source: Array<any>, rule: any): Array<any> => {
+export default (source: any[], rule: any): any[] => {
   return source.map((item: any) => {
     return mapObject(item, rule);
   });

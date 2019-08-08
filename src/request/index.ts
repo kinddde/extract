@@ -1,12 +1,10 @@
-import request from "./request";
-
 import qs from "qs";
-import formData from "./form";
+import { template } from "lodash";
 import JSON5 from "json5";
 import gbk from "./gbk";
 import map from "./map";
-
-import { template } from "lodash";
+import formData from "./form";
+import request from "./request";
 
 import { RequestOption, RequestParam } from "./interface";
 
@@ -14,6 +12,7 @@ export default class Request {
   private $logger: boolean;
 
   private $url: string;
+
   private $method: string;
 
   private $response: string;
@@ -21,18 +20,20 @@ export default class Request {
   private $paramType: string;
 
   private $param: object;
+
   private $data: any;
+
   private $encode: string;
 
   private reuqestParam: RequestParam;
 
   private $urlTemplate: boolean;
 
-  constructor(option: RequestOption = { logger: false }) {
+  public constructor(option: RequestOption = { logger: false }) {
     this.$logger = option.logger;
   }
 
-  startRequest(prequestPram: RequestParam) {
+  public startRequest(prequestPram: RequestParam): any {
     let {
       url,
       method = "GET",
@@ -79,17 +80,17 @@ export default class Request {
     return this.post();
   }
 
-  private get() {
+  private get(): any {
     if (!this.$urlTemplate) {
       let url = qs.stringify(this.$param || {});
 
-      this.$url = this.$url + "?" + url;
+      this.$url = `${this.$url}?${url}`;
     }
 
     return this.request();
   }
 
-  private post() {
+  private post(): any {
     if (this.$paramType === "form") {
       this.$data = formData(this.$param);
     } else {
@@ -101,8 +102,12 @@ export default class Request {
     return this.request();
   }
 
-  private request() {
-    this.$logger && console.log(this.$url);
+  private request(): any {
+    /* eslint-disable  no-console */
+    if (this.$logger) {
+      console.log(this.$url);
+    }
+
     return request(this.$url, {
       method: this.$method,
       body: this.$data,

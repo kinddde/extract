@@ -1,7 +1,6 @@
 import { forIn } from "lodash";
 
 import mapFuns from "./funs";
-
 import { Rule } from "./funs";
 
 /**
@@ -11,12 +10,12 @@ import { Rule } from "./funs";
  * 依次遍历传入的对象key值, 并重新赋值
  * @$$$$ 统一执行的方法
  */
-export interface iterableRule {
-  $$$$: Array<Rule>;
+export interface IterableRule {
+  $$$$: Rule[];
   [propName: string]: any;
 }
 
-export default (source: Array<any>, rule: any): Array<any> => {
+export default (source: any[], rule: any): any[] => {
   return source.map((item: any) => {
     let $obj: any = {};
     forIn(rule, (value: any, key: string) => {

@@ -3,7 +3,7 @@
  * 赋值语句
  * @source  字符串 数字类型
  */
-export interface assignRule {}
+export type assignRule = string;
 
 export default (data: any): any => {
   return data;

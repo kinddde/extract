@@ -3,12 +3,12 @@
  * @reg    正则表达式、字符串
  * @target  目标字符串
  */
-export interface replaceRule {
+export interface ReplaceRule {
   reg: string;
   target?: string;
 }
 
-function replaceFun(source: string, rule: replaceRule): string {
+function replaceFun(source: string, rule: ReplaceRule): string {
   let reg = new RegExp(rule.reg, "g");
   return source.replace(reg, rule.target || "");
 }

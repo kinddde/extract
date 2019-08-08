@@ -3,13 +3,13 @@ import domParseFun, { domParserRule } from "./domParser";
 import filterEmptyStringFun, {
   filterEmptyStringRule
 } from "./filterEmptyString";
-import iterableFun, { iterableRule } from "./iterable";
-import iterableFunFun, { iterableFunRule } from "./iterableFun";
+import iterableFun, { IterableRule } from "./iterable";
+import iterableFunFun, { IterableFunRule } from "./iterableFun";
 import jsonPathFun, { jsonPathRule } from "./jsonPath";
-import mapKeyFun, { mapKeyRule } from "./mapKey";
-import mapObjectFun, { mapObjectRule } from "./mapObject";
+import mapKeyFun, { MapKeyRule } from "./mapKey";
+import mapObjectFun, { MapObjectRule } from "./mapObject";
 import matchFun, { matchFunRule } from "./match";
-import replaceFun, { replaceRule } from "./replace";
+import replaceFun, { ReplaceRule } from "./replace";
 import toStringFun, { toStringRule } from "./toString";
 import trimFun, { trimRule } from "./trim";
 import xpathFun, { xpathRule } from "./xpath";
@@ -20,25 +20,28 @@ import splitFun, { splitFunRule } from "./split";
 
 import templateFun, { templateFunRule } from "./template";
 
+import flatFun, { flatFunRule } from "./flat";
+
 export interface Rule {
   fun: FunName;
   arg?:
     | booleanRule
     | domParserRule
-    | iterableFunRule
+    | IterableFunRule
     | jsonPathRule
-    | mapObjectRule
-    | replaceRule
+    | MapObjectRule
+    | ReplaceRule
     | toStringRule
     | xpathRule
     | matchFunRule
-    | iterableRule
-    | mapKeyRule
+    | IterableRule
+    | MapKeyRule
     | trimRule
     | filterEmptyStringRule
     | assignRule
     | splitFunRule
     | templateFunRule
+    | flatFunRule
     | any;
 }
 
@@ -58,9 +61,10 @@ export type FunName =
   | "filterEmptyString"
   | "assign"
   | "split"
-  | "template";
+  | "template"
+  | "flat";
 
-function resolveFun(data: any, rule: Rule) {
+function resolveFun(data: any, rule: Rule): any {
   const { fun, arg } = rule;
   switch (fun) {
     case "boolean":
@@ -100,13 +104,19 @@ function resolveFun(data: any, rule: Rule) {
       return splitFun(data, arg);
     case "template":
       return templateFun(data, arg);
+
+    case "flat":
+      return flatFun(data, arg);
+
+    default:
+      return data;
   }
 }
 
 export default (data: any, rules: any) => {
   let param = data;
 
-  for (let rule of rules) {
+  for (const rule of rules) {
     param = resolveFun(param, rule);
   }
 

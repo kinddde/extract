@@ -1,7 +1,6 @@
 import { forIn } from "lodash";
-import mapFuns from "./funs";
 
-import { Rule } from "./funs";
+import mapFuns, { Rule } from "./funs";
 
 /**
  * mapObject方法规则
@@ -9,22 +8,23 @@ import { Rule } from "./funs";
  *
  * @$$$$ 统一执行的方法  如果没有设置其他key, 将返回统一处理后的结果
  */
-export interface mapObjectRule {
-  $$$$: Array<Rule>;
-  [propName: string]: Array<Rule>;
+export interface MapObjectRule {
+  $$$$: Rule[];
+  [propName: string]: Rule[];
 }
 
 export default (data: any, rule: object) => {
+  let source = data;
   let $obj: any = {};
-  let $key: boolean = false;
+  let $key = false;
   forIn(rule, (value: any, key: string) => {
     if (key === "$$$$") {
-      data = mapFuns(data, value);
+      source = mapFuns(source, value);
     } else {
       $key = true;
-      $obj[key] = mapFuns(data, value);
+      $obj[key] = mapFuns(source, value);
     }
   });
 
-  return $key ? $obj : data;
+  return $key ? $obj : source;
 };

@@ -1,0 +1,48 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/babel",
+    "plugin:prettier/recommended"
+  ],
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "no-prototype-builtins": "off",
+
+    "import/prefer-default-export": "off",
+    "import/no-cycle": "off",
+    "import/no-duplicates": "off",
+
+    "no-use-before-define": [
+      "error",
+      { "functions": false, "classes": true, "variables": true }
+    ],
+
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      { "allowExpressions": true, "allowTypedFunctionExpressions": true }
+    ],
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      {
+        "functions": false,
+        "classes": true,
+        "variables": true,
+        "typedefs": true
+      }
+    ],
+    "unicorn/prevent-abbreviations": "off",
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-underscore-dangle": "off",
+    "no-restricted-syntax": "off",
+    "guard-for-in": "off",
+    "prefer-const": "off"
+  }
+}
