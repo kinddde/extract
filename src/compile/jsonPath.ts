@@ -1,4 +1,4 @@
-import { value } from "jsonpath";
+import jsonPath from "jsonpath";
 
 /**
  * jsonPath 规则
@@ -7,5 +7,5 @@ import { value } from "jsonpath";
 export type jsonPathRule = string;
 
 export default (source: any, xpath: jsonPathRule): any => {
-  return value(source, xpath);
+  return jsonPath.value(source, xpath);
 };

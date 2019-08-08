@@ -1,6 +1,6 @@
 /**
- *  splitFun 规则
- *  @rule 分割字符串
+ *  flatFun 规则
+ *  @rule 展开数据  [].flat(arg)
  */
 export type flatFunRule = string;
 
