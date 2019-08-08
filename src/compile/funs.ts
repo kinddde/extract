@@ -18,6 +18,8 @@ import assignFun, { assignRule } from "./assign";
 
 import splitFun, { splitFunRule } from "./split";
 
+import templateFun, { templateFunRule } from "./template";
+
 export interface Rule {
   fun: FunName;
   arg?:
@@ -36,6 +38,7 @@ export interface Rule {
     | filterEmptyStringRule
     | assignRule
     | splitFunRule
+    | templateFunRule
     | any;
 }
 
@@ -54,7 +57,8 @@ export type FunName =
   | "trim"
   | "filterEmptyString"
   | "assign"
-  | "split";
+  | "split"
+  | "template";
 
 function resolveFun(data: any, rule: Rule) {
   const { fun, arg } = rule;
@@ -94,6 +98,8 @@ function resolveFun(data: any, rule: Rule) {
       return assignFun(arg);
     case "split":
       return splitFun(data, arg);
+    case "template":
+      return templateFun(data, arg);
   }
 }
 

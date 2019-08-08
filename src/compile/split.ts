@@ -1,6 +1,6 @@
 /**
  *  splitFun 规则
- *  @rule 正则表达式  ''.match
+ *  @rule 分割字符串
  */
 export type splitFunRule = string;
 

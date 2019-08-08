@@ -41,16 +41,22 @@ const rule: Array<Rule> = [
 
 new Request({ logger: true })
   .startRequest({
-    url: "https://www.aikantxt.la/aikan<%=bookId%>/",
-    urlTemplate: true,
+    url: "https://sou.jiaston.com/search.aspx",
     method: "GET",
+    headers: {},
+    param: {
+      title: "三寸人间"
+    },
+    paramRule: {
+      siteid: "app",
+      key: "title"
+    },
     paramType: "json",
-    param: { bookId: "28772" },
     encode: "qs",
-    response: "text"
+    response: "json"
   })
   .then((data: any) => {
-    console.log(data)
+    console.log(data);
     // let links = Compile(data, rules);
     //
     // console.log(links);
