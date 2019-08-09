@@ -7,5 +7,8 @@ import jsonPath from "jsonpath";
 export type jsonPathRule = string;
 
 export default (source: any, xpath: jsonPathRule): any => {
+  if (!source) {
+    return source;
+  }
   return jsonPath.value(source, xpath);
 };
