@@ -1,5 +1,6 @@
 export interface RequestOption {
   logger?: boolean;
+  timeout?: number;
 }
 
 export interface RequestParam {

@@ -29,8 +29,16 @@ export default class Request {
 
   private $urlTemplate: boolean;
 
-  public constructor(option: RequestOption = { logger: false }) {
+  private $option: object;
+
+  public constructor(
+    option: RequestOption = { logger: false, timeout: 10000 }
+  ) {
+    const { logger, ...param } = option;
+
     this.$logger = option.logger;
+
+    this.$option = param;
   }
 
   public startRequest(prequestPram: RequestParam): any {
@@ -113,7 +121,8 @@ export default class Request {
       body: this.$data,
       headers: {
         ...(this.reuqestParam ? this.reuqestParam.headers || {} : {})
-      }
+      },
+      ...this.$option
     })
       .then((res: any) => {
         return res.text();
