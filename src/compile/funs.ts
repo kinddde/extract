@@ -22,6 +22,8 @@ import templateFun, { templateFunRule } from "./template";
 
 import flatFun, { flatFunRule } from "./flat";
 
+import objectToArrayFun, { objectToArrayFunRule } from "./objectToArray";
+
 export interface Rule {
   fun: FunName;
   arg?:
@@ -42,6 +44,7 @@ export interface Rule {
     | splitFunRule
     | templateFunRule
     | flatFunRule
+    | objectToArrayFunRule
     | any;
 }
 
@@ -62,7 +65,8 @@ export type FunName =
   | "assign"
   | "split"
   | "template"
-  | "flat";
+  | "flat"
+  | "objectToArray";
 
 function resolveFun(data: any, rule: Rule): any {
   const { fun, arg } = rule;
@@ -107,6 +111,8 @@ function resolveFun(data: any, rule: Rule): any {
 
     case "flat":
       return flatFun(data, arg);
+    case "objectToArray":
+      return objectToArrayFun(data);
 
     default:
       return data;
