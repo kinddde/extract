@@ -13,7 +13,13 @@ function mapKey(obj: any, map: Map<string, string>): object {
   let $obj: any = {};
 
   for (let [value, key] of map) {
-    $obj[key] = obj[value] || value;
+    if (obj[value]) {
+      $obj[key] = obj[value];
+    } else if (obj.hasOwnProperty(value)) {
+      $obj[key] = "";
+    } else {
+      $obj[key] = value;
+    }
   }
 
   return $obj;
