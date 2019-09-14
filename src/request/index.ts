@@ -101,6 +101,8 @@ export default class Request {
   private post(): any {
     if (this.$paramType === "form") {
       this.$data = formData(this.$param);
+    } else if (this.$paramType === "stringify") {
+      this.$data = JSON.stringify(this.$param);
     } else {
       this.$data = qs.stringify(this.$param, {
         encode: false

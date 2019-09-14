@@ -10,7 +10,7 @@ export interface RequestParam {
   method: string;
   headers?: object;
   response?: "json" | "text";
-  paramType?: "json" | "form";
+  paramType?: "json" | "form" | "stringify";
   paramRule?: object;
   param?: object;
   encode?: "qs" | "gbk";
