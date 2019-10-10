@@ -118,7 +118,11 @@ export default class Request {
     return this.request();
   }
 
-  private request(): any {
+  private request(): Promise<{
+    url: string;
+    redirect: boolean;
+    body: Record<string, any> | string;
+  }> {
     /* eslint-disable  no-console */
     if (this.$logger) {
       console.log(this.$url);
