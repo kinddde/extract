@@ -1,6 +1,7 @@
 import qs from "qs";
 import { template } from "lodash";
 import JSON5 from "json5";
+import { log } from "util";
 import gbk from "./gbk";
 import map from "./map";
 import formData from "./form";
@@ -31,8 +32,13 @@ export default class Request {
 
   private $option: object;
 
+  private $responseUrl: string;
+
   public constructor(
-    option: RequestOption = { logger: false, timeout: 10000 }
+    option: RequestOption = {
+      logger: false,
+      timeout: 10000
+    }
   ) {
     const { logger, ...param } = option;
 
@@ -127,6 +133,8 @@ export default class Request {
       ...this.$option
     })
       .then((res: any) => {
+        this.$responseUrl = res.url;
+
         return res.text();
       })
       .then((res: any) => {
@@ -134,6 +142,13 @@ export default class Request {
           return res;
         }
         return JSON5.parse(res);
+      })
+      .then((data: any) => {
+        return {
+          url: this.$responseUrl,
+          redirect: this.$responseUrl !== this.$url,
+          body: data
+        };
       });
   }
 }

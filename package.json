@@ -1,6 +1,6 @@
 {
   "name": "@kin-common/novels-compile",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "private": false,
   "description": "This README would normally document whatever steps are necessary to get your application up and running.",
   "main": "lib/index.js",
