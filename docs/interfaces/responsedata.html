@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Rule | @kin-common/novels-compile</title>
+	<title>ResponseData | @kin-common/novels-compile</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -936,19 +936,22 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-interface">
 			<a href="requestparam.html" class="tsd-kind-icon">Request<wbr>Param</a>
 		</li>
-		<li class=" tsd-kind-interface">
-			<a href="responsedata.html" class="tsd-kind-icon">Response<wbr>Data</a>
-		</li>
 		<li class="current tsd-kind-interface">
-			<a href="rule.html" class="tsd-kind-icon">Rule</a>
+			<a href="responsedata.html" class="tsd-kind-icon">Response<wbr>Data</a>
 			<ul>
 				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="rule.html#arg" class="tsd-kind-icon">arg</a>
+					<a href="responsedata.html#body" class="tsd-kind-icon">body</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface">
-					<a href="rule.html#fun" class="tsd-kind-icon">fun</a>
+					<a href="responsedata.html#redirect" class="tsd-kind-icon">redirect</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-interface">
+					<a href="responsedata.html#url" class="tsd-kind-icon">url</a>
 				</li>
 			</ul>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="rule.html" class="tsd-kind-icon">Rule</a>
 		</li>
 		<li class=" tsd-kind-type-alias">
 			<a href="../globals.html#funname" class="tsd-kind-icon">Fun<wbr>Name</a>
@@ -1000,7 +1003,7 @@ img { max-width: 100%; }
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">Rule</span>
+					<span class="target">ResponseData</span>
 				</li>
 			</ul>
 		</section>
@@ -1011,8 +1014,9 @@ img { max-width: 100%; }
 					<section class="tsd-index-section ">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="rule.html#arg" class="tsd-kind-icon">arg</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="rule.html#fun" class="tsd-kind-icon">fun</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="responsedata.html#body" class="tsd-kind-icon">body</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="responsedata.html#redirect" class="tsd-kind-icon">redirect</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface"><a href="responsedata.html#url" class="tsd-kind-icon">url</a></li>
 						</ul>
 					</section>
 				</div>
@@ -1021,22 +1025,32 @@ img { max-width: 100%; }
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Properties</h2>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="arg" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagOptional">Optional</span> arg</h3>
-				<div class="tsd-signature tsd-kind-icon">arg<span class="tsd-signature-symbol">:</span> <a href="../globals.html#booleanrule" class="tsd-signature-type">booleanRule</a><span class="tsd-signature-symbol"> | </span><a href="../globals.html#domparserrule" class="tsd-signature-type">domParserRule</a><span class="tsd-signature-symbol"> | </span><a href="iterablefunrule.html" class="tsd-signature-type">IterableFunRule</a><span class="tsd-signature-symbol"> | </span><a href="../globals.html#jsonpathrule" class="tsd-signature-type">jsonPathRule</a><span class="tsd-signature-symbol"> | </span><a href="mapobjectrule.html" class="tsd-signature-type">MapObjectRule</a><span class="tsd-signature-symbol"> | </span><a href="replacerule.html" class="tsd-signature-type">ReplaceRule</a><span class="tsd-signature-symbol"> | </span><a href="../globals.html#tostringrule" class="tsd-signature-type">toStringRule</a><span class="tsd-signature-symbol"> | </span><a href="../globals.html#xpathrule" class="tsd-signature-type">xpathRule</a><span class="tsd-signature-symbol"> | </span><a href="../globals.html#matchfunrule" class="tsd-signature-type">matchFunRule</a><span class="tsd-signature-symbol"> | </span><a href="iterablerule.html" class="tsd-signature-type">IterableRule</a><span class="tsd-signature-symbol"> | </span><a href="mapkeyrule.html" class="tsd-signature-type">MapKeyRule</a><span class="tsd-signature-symbol"> | </span><a href="../globals.html#trimrule" class="tsd-signature-type">trimRule</a><span class="tsd-signature-symbol"> | </span><a href="../globals.html#filteremptystringrule" class="tsd-signature-type">filterEmptyStringRule</a><span class="tsd-signature-symbol"> | </span><a href="../globals.html#assignrule" class="tsd-signature-type">assignRule</a><span class="tsd-signature-symbol"> | </span><a href="../globals.html#splitfunrule" class="tsd-signature-type">splitFunRule</a><span class="tsd-signature-symbol"> | </span><a href="../globals.html#templatefunrule" class="tsd-signature-type">templateFunRule</a><span class="tsd-signature-symbol"> | </span><a href="../globals.html#flatfunrule" class="tsd-signature-type">flatFunRule</a><span class="tsd-signature-symbol"> | </span><a href="../globals.html#objecttoarrayfunrule" class="tsd-signature-type">objectToArrayFunRule</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span></div>
+				<a name="body" class="tsd-anchor"></a>
+				<h3>body</h3>
+				<div class="tsd-signature tsd-kind-icon">body<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in compile/funs.ts:29</li>
+						<li>Defined in request/interface.ts:22</li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-				<a name="fun" class="tsd-anchor"></a>
-				<h3>fun</h3>
-				<div class="tsd-signature tsd-kind-icon">fun<span class="tsd-signature-symbol">:</span> <a href="../globals.html#funname" class="tsd-signature-type">FunName</a></div>
+				<a name="redirect" class="tsd-anchor"></a>
+				<h3>redirect</h3>
+				<div class="tsd-signature tsd-kind-icon">redirect<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in compile/funs.ts:28</li>
+						<li>Defined in request/interface.ts:21</li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<a name="url" class="tsd-anchor"></a>
+				<h3>url</h3>
+				<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in request/interface.ts:20</li>
 					</ul>
 				</aside>
 			</section>

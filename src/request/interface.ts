@@ -15,3 +15,9 @@ export interface RequestParam {
   param?: object;
   encode?: "qs" | "gbk";
 }
+
+export interface ResponseData {
+  url: string;
+  redirect: boolean;
+  body: any;
+}

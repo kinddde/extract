@@ -7,7 +7,7 @@ import map from "./map";
 import formData from "./form";
 import request from "./request";
 
-import { RequestOption, RequestParam } from "./interface";
+import { RequestOption, RequestParam, ResponseData } from "./interface";
 
 export default class Request {
   private $logger: boolean;
@@ -47,7 +47,7 @@ export default class Request {
     this.$option = param;
   }
 
-  public startRequest(prequestPram: RequestParam): any {
+  public startRequest(prequestPram: RequestParam): Promise<ResponseData> {
     let {
       url,
       method = "GET",
@@ -94,7 +94,7 @@ export default class Request {
     return this.post();
   }
 
-  private get(): any {
+  private get(): Promise<ResponseData> {
     if (!this.$urlTemplate) {
       let url = qs.stringify(this.$param || {});
 
@@ -104,7 +104,7 @@ export default class Request {
     return this.request();
   }
 
-  private post(): any {
+  private post(): Promise<ResponseData> {
     if (this.$paramType === "form") {
       this.$data = formData(this.$param);
     } else if (this.$paramType === "stringify") {
@@ -118,11 +118,7 @@ export default class Request {
     return this.request();
   }
 
-  private request(): Promise<{
-    url: string;
-    redirect: boolean;
-    body: Record<string, any> | string;
-  }> {
+  private request(): Promise<ResponseData> {
     /* eslint-disable  no-console */
     if (this.$logger) {
       console.log(this.$url);
