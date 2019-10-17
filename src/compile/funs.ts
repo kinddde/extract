@@ -8,8 +8,11 @@ import iterableFunFun, { IterableFunRule } from "./iterableFun";
 import jsonPathFun, { jsonPathRule } from "./jsonPath";
 import mapKeyFun, { MapKeyRule } from "./mapKey";
 import mapObjectFun, { MapObjectRule } from "./mapObject";
-import matchFun, { matchFunRule } from "./match";
-import replaceFun, { ReplaceRule } from "./replace";
+
+import matchFun, { matchFunRule } from "./RegExp/match";
+import replaceFun, { ReplaceRule } from "./RegExp/replace";
+import regExpTestFun, { regExpTestRule } from "./RegExp/test";
+
 import toStringFun, { toStringRule } from "./toString";
 import trimFun, { trimRule } from "./trim";
 import xpathFun, { xpathRule } from "./xpath";
@@ -45,6 +48,7 @@ export interface Rule {
     | templateFunRule
     | flatFunRule
     | objectToArrayFunRule
+    | regExpTestRule
     | any;
 }
 
@@ -66,7 +70,8 @@ export type FunName =
   | "split"
   | "template"
   | "flat"
-  | "objectToArray";
+  | "objectToArray"
+  | "regExpTest";
 
 function resolveFun(data: any, rule: Rule): any {
   const { fun, arg } = rule;
@@ -113,6 +118,9 @@ function resolveFun(data: any, rule: Rule): any {
       return flatFun(data, arg);
     case "objectToArray":
       return objectToArrayFun(data);
+
+    case "regExpTest":
+      return regExpTestFun(data, arg);
 
     default:
       return data;
