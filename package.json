@@ -1,10 +1,12 @@
 {
   "name": "@kin-common/novels-compile",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "private": false,
   "description": "This README would normally document whatever steps are necessary to get your application up and running.",
   "main": "lib/index.js",
-  "files": ["lib/**"],
+  "files": [
+    "lib/**"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -26,13 +28,17 @@
   "homepage": "",
   "dependencies": {
     "@babel/runtime-corejs3": "^7.5.5",
+    "encoding": "^0.1.12",
     "form-data": "^2.5.0",
     "gbk.js": "^0.3.0",
+    "http-proxy-agent": "^4.0.1",
+    "https-proxy-agent": "^5.0.0",
     "json5": "^2.1.0",
     "jsonpath": "^1.0.2",
     "lodash": "^4.17.15",
-    "node-fetch": "1.7.3",
+    "node-fetch": "2.6.0",
     "qs": "^6.7.0",
+    "socks-proxy-agent": "^5.0.0",
     "xmldom": "^0.1.27",
     "xpath": "^0.0.27"
   },
@@ -68,7 +74,7 @@
     "prettier": "^1.18.2",
     "ts-node": "^8.3.0",
     "ts-node-dev": "^1.0.0-pre.40",
-    "typedoc": "^0.14.2",
+    "typedoc": "0.17.0",
     "typescript": "^3.5.3"
   }
 }

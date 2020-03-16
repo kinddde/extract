@@ -14,6 +14,7 @@ export interface RequestParam {
   paramRule?: object;
   param?: object;
   encode?: "qs" | "gbk";
+  proxy?: string;
 }
 
 export interface ResponseData {

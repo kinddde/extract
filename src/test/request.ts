@@ -3,21 +3,15 @@ import { Request } from "../index";
 
 new Request({ logger: true })
   .startRequest({
-    url: "http://www.yunlaige.com/modules/article/search.php",
+    url: "http://httpbin.org/ip",
     urlTemplate: false,
-    method: "POST",
-    paramType: "json",
-    param: {
-      title: "三寸人间"
-    },
-    paramRule: {
-      searchkey: "title",
-      action: "login"
-    },
-    headers: {
-      "content-type": "application/x-www-form-urlencoded"
-    },
+    method: "GET",
+
     encode: "gbk",
-    response: "text"
+    response: "json",
+    proxy: "socks4://181.143.16.58:44550"
+    // proxy: "http://51.158.114.177:8811"
   })
-  .then(console.log);
+  .then(data => {
+    console.log(data);
+  });

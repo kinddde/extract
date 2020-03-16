@@ -1,13 +1,20 @@
 import qs from "qs";
 import { template } from "lodash";
 import JSON5 from "json5";
-import { log } from "util";
+
+import HttpProxyAgent from "http-proxy-agent";
+import HttpsProxyAgent from "https-proxy-agent";
+import SocksProxyAgent from "socks-proxy-agent";
 import gbk from "./gbk";
 import map from "./map";
 import formData from "./form";
 import request from "./request";
 
 import { RequestOption, RequestParam, ResponseData } from "./interface";
+
+const HttpAgent = HttpProxyAgent as any;
+const HttpsAgent = HttpsProxyAgent as any;
+const SocksAgent = SocksProxyAgent as any;
 
 export default class Request {
   private $logger: boolean;
@@ -34,6 +41,10 @@ export default class Request {
 
   private $responseUrl: string;
 
+  private $proxy: string;
+
+  private $agent: any;
+
   public constructor(
     option: RequestOption = {
       logger: false,
@@ -56,7 +67,8 @@ export default class Request {
       encode = "qs",
       paramType = "json",
       paramRule,
-      urlTemplate = false
+      urlTemplate = false,
+      proxy = ""
     } = prequestPram;
 
     this.reuqestParam = prequestPram;
@@ -75,6 +87,8 @@ export default class Request {
 
     this.$urlTemplate = urlTemplate;
 
+    this.$proxy = proxy;
+
     if (this.$encode === "gbk") {
       this.$param = gbk(this.$param);
     }
@@ -85,6 +99,10 @@ export default class Request {
 
     if (urlTemplate) {
       this.$url = template(this.$url)(this.$param);
+    }
+
+    if (this.$proxy) {
+      this.agent();
     }
 
     if (this.$method === "GET") {
@@ -118,6 +136,23 @@ export default class Request {
     return this.request();
   }
 
+  private agent(): any {
+    if (/^socks/.test(this.$proxy)) {
+      this.$agent = new SocksAgent(this.$proxy);
+
+      return;
+    }
+
+    if (/^https:\/\//.test(this.$url)) {
+      this.$agent = new HttpsAgent(this.$proxy);
+      return;
+    }
+
+    if (/^http:\/\//.test(this.$url)) {
+      this.$agent = new HttpAgent(this.$proxy);
+    }
+  }
+
   private request(): Promise<ResponseData> {
     /* eslint-disable  no-console */
     if (this.$logger) {
@@ -130,12 +165,13 @@ export default class Request {
       headers: {
         ...(this.reuqestParam ? this.reuqestParam.headers || {} : {})
       },
+      agent: this.$agent || null,
       ...this.$option
     })
       .then((res: any) => {
         this.$responseUrl = res.url;
 
-        return res.text();
+        return res.textConverted();
       })
       .then((res: any) => {
         if (this.$response === "text") {
