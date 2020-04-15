@@ -1,6 +1,6 @@
 {
   "name": "@kin-common/novels-compile",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "private": false,
   "description": "This README would normally document whatever steps are necessary to get your application up and running.",
   "main": "lib/index.js",
@@ -28,6 +28,7 @@
   "homepage": "",
   "dependencies": {
     "@babel/runtime-corejs3": "^7.5.5",
+    "atob": "^2.1.2",
     "encoding": "^0.1.12",
     "form-data": "^2.5.0",
     "gbk.js": "^0.3.0",
@@ -51,6 +52,7 @@
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-typescript": "^7.3.3",
+    "@types/atob": "^2.1.2",
     "@types/json5": "^0.0.30",
     "@types/jsonpath": "^0.2.0",
     "@types/lodash": "^4.14.136",

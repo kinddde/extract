@@ -27,6 +27,8 @@ import flatFun, { flatFunRule } from "./flat";
 
 import objectToArrayFun, { objectToArrayFunRule } from "./objectToArray";
 
+import atob, { atobRule } from "./atob";
+
 export interface Rule {
   fun: FunName;
   arg?:
@@ -49,6 +51,7 @@ export interface Rule {
     | flatFunRule
     | objectToArrayFunRule
     | regExpTestRule
+    | atobRule
     | any;
 }
 
@@ -71,7 +74,8 @@ export type FunName =
   | "template"
   | "flat"
   | "objectToArray"
-  | "regExpTest";
+  | "regExpTest"
+  | "atob";
 
 function resolveFun(data: any, rule: Rule): any {
   const { fun, arg } = rule;
@@ -121,6 +125,9 @@ function resolveFun(data: any, rule: Rule): any {
 
     case "regExpTest":
       return regExpTestFun(data, arg);
+
+    case "atob":
+      return atob(data);
 
     default:
       return data;
